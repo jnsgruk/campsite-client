@@ -1,0 +1,54 @@
+{
+  "name": "campsite-client",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "sim": "./scripts/sim.sh",
+    "rollup": "./node_modules/.bin/rollup -c"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "node-gpsd": "^0.3.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelrc-rollup": "^3.0.0",
+    "eslint": "^4.19.1",
+    "nodemon": "^1.17.4",
+    "rollup": "^0.65.0",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-terser": "^2.0.2",
+    "terser": "^3.8.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "transform-object-rest-spread",
+      "babel-plugin-transform-class-properties"
+    ]
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "src/config.json"
+    ]
+  }
+}
