@@ -57,11 +57,13 @@ class StatusUpdater {
         }
       })
       .catch(e => {
-        console.log(
-          `[${readableTimestamp}][${callsign}] Error sending location to http://${
-            this.host
-          }:${this.port} - ${e.message}`
-        )
+        if (this.debug) {
+          console.log(
+            `[${readableTimestamp}][${callsign}] Error sending location to http://${
+              this.host
+            }:${this.port} - ${e.message}`
+          )
+        }
       })
   }
 }
