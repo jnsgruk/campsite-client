@@ -8,5 +8,5 @@ printHighlighted ()
 }
 
 printHighlighted "... nodemoning!"
-nodemon --exec 'node --trace-warnings -r babel-register ./src/index.js'
+nodemon --exec 'node --trace-warnings -r babel-register ./src/simulator.js'
 printHighlighted "... done!"
