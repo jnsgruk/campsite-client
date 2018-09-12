@@ -2,6 +2,6 @@
   "host": "localhost",
   "port": 5000,
   "interval": 5,
-  "callsign": "Sensor 1",
+  "callsign": "Device 1",
   "debug": true
 }

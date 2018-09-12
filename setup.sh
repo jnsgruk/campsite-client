@@ -27,6 +27,7 @@ After=network.target auditd.service
 [Service]
 User=root
 WorkingDirectory=/opt/campsite-client
+Environment="NODE_ENV=production"
 ExecStart=/opt/campsite-client/campsite-client.js -c /opt/campsite-client/config.json
 Restart=always
 

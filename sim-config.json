@@ -1,41 +1,41 @@
 [
   {
-    "callsign": "SGC",
+    "callsign": "Home",
     "interval": 3,
     "lat": 51.50486,
     "lon": -0.127047,
     "debug": true
   },
   {
-    "callsign": "Sensor 1",
+    "callsign": "Device 1",
     "interval": 5,
     "lat": 51.474486,
     "lon": -0.200817,
     "debug": true
   },
   {
-    "callsign": "Sensor 2",
+    "callsign": "Device 2",
     "interval": 60,
     "lat": 51.504994,
     "lon": -0.194021,
     "debug": true
   },
   {
-    "callsign": "Sensor 3",
+    "callsign": "Device 3",
     "interval": 120,
     "lat": 51.41618,
     "lon": -0.221163,
     "debug": true
   },
   {
-    "callsign": "Sensor 4",
+    "callsign": "Device 4",
     "interval": 600,
     "lat": 51.547221,
     "lon": -0.304402,
     "debug": true
   },
   {
-    "callsign": "Sensor 5",
+    "callsign": "Device 5",
     "interval": 300,
     "lat": 51.499619,
     "lon": -0.016512,
