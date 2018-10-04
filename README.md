@@ -37,8 +37,8 @@ Optional arguments:
 Before deployment in production, it's best to transpile, combine and minimise the source into a single file. This can be done with one command that utilises `rollup` and `terser`:
 
 ```
-$ npm install
-$ npm run rollup
+$ yarn install
+$ yarn run rollup
 ```
 
 The production build will be saved in `build/campsite-client.js`. This can be run simply by making the file executable and running `./campsite-client.js` combined with the options displayed above.
@@ -48,6 +48,6 @@ The production build will be saved in `build/campsite-client.js`. This can be ru
 To get started, clone the repo and double check the `sim-config.json` file has the correct devices configured. Next, run the following:
 
 ```
-$ npm install
-$ npm run sim
+$ yarn install
+$ yarn run sim
 ```
