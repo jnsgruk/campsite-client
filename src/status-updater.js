@@ -44,6 +44,7 @@ class StatusUpdater {
 
     request
       .post({
+        strictSSL: false,
         uri: `${protocol}://${this.host}:${this.port}/api/device`,
         body: { callsign, lat, lon, timestamp },
         json: true,
