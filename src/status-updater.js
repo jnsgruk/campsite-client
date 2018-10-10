@@ -36,6 +36,7 @@ class StatusUpdater {
     const lon = this.fakeGPS ? this.lon : gpsInfo.lon
     const timestamp = Math.round(new Date().getTime() / 1000)
     const readableTimestamp = moment.unix(timestamp).format("DD/MM/YY HH:mm:ss")
+    const protocol = process.env.NODE_ENV === "development" ? "http" : "https"
 
     const callsign = this.callsign
 
@@ -43,23 +44,23 @@ class StatusUpdater {
 
     request
       .post({
-        uri: `http://${this.host}:${this.port}/device`,
+        uri: `${protocol}://${this.host}:${this.port}/api/device`,
         body: { callsign, lat, lon, timestamp },
         json: true,
       })
       .then(body => {
         if (this.debug) {
           console.log(
-            `[${readableTimestamp}][${callsign}] Sent location (${lat},${lon}) to http://${
+            `[${readableTimestamp}][${callsign}] Sent location (${lat},${lon}) to ${protocol}://${
               this.host
-            }:${this.port}/devices`
+            }:${this.port}/api/devices`
           )
         }
       })
       .catch(e => {
         if (this.debug) {
           console.log(
-            `[${readableTimestamp}][${callsign}] Error sending location to http://${
+            `[${readableTimestamp}][${callsign}] Error sending location to ${protocol}://${
               this.host
             }:${this.port} - ${e.message}`
           )

@@ -17,7 +17,10 @@ systemctl stop campsite-client
 rm -rf /opt/campsite-client
 mkdir -p /opt/campsite-client
 cp ./build/campsite-client.js /opt/campsite-client/campsite-client.js
+if [ -f "/opt/campsite-client/config.json" ]; then sudo cp /opt/campsite-client/config.json /tmp/config.json; fi
 cp config.json /opt/campsite-client/config.json
+# Retore config if one was backed up
+if [ -f "/tmp/config.json" ]; then sudo mv /tmp/config.json /opt/campsite-client/config.json; fi
 cp package.json /opt/campsite-client/package.json
 cd /opt/campsite-client
 NODE_ENV=production yarn
