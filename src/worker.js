@@ -43,8 +43,8 @@ parser.addArgument(["-c", "--config-file"], {
 
 const args = parser.parseArgs()
 
-const { callsign, interval, debug, port, host } = args.config
+const { callsign, interval, debug, port, host, lat, lon } = args.config
   ? JSON.parse(readFileSync("./config.json"))
   : args
 
-new StatusUpdater({ callsign, interval, debug, port, host })
+new StatusUpdater({ callsign, interval, debug, port, host, lat, lon })
