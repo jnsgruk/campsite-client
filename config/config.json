@@ -1,6 +1,6 @@
 {
-  "host": "localhost",
-  "port": 5000,
+  "host": "192.168.2.1",
+  "port": 443,
   "interval": 5,
   "callsign": "Device 1",
   "debug": true

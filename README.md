@@ -32,12 +32,34 @@ Optional arguments:
                         Path to a config file
 ```
 
-### Compiling/Running the Worker
+### Installing in production with systemd unit
 
-Before deployment in production, it's best to transpile, combine and minimise the source into a single file. This can be done with one command that utilises `rollup` and `terser`:
+This method will install Campsite Client into `/opt/campsite-client` and create a systemd unit called `campsite-client`.
+
+First, obtain a release zip file. This can be downloaded from the (Releases Page)[https://github.com/jnsgruk/campsite-client/releases] or built from the command line:
 
 ```
-$ yarn install
+$ git clone https://github.com/jnsgruk/campsite-client
+$ cd campsite-client/
+$ ./build-release.sh
+```
+
+Once you have a release zip, copy it onto the client device and run:
+
+```
+$ unzip campsite-client.zip && sudo ./campsite-client/install.sh
+```
+
+To configure the client, edit the `/opt/campsite-client/config.json` file. Note that running the install script on a device already running the client will not touch your config file.
+
+### Build Project
+
+To transpile, combine and minimise the source into a single file:
+
+```
+$ git clone https://github.com/jnsgruk/campsite-client
+$ cd campsite-client/
+$ yarn
 $ yarn run rollup
 ```
 
@@ -45,7 +67,7 @@ The production build will be saved in `build/campsite-client.js`. This can be ru
 
 #### Simulator
 
-To get started, clone the repo and double check the `sim-config.json` file has the correct devices configured. Next, run the following:
+The simulator is used to populate a Campsite server with false devices for demonstration purposes. To get started, clone the repo and double check the `config/sim-config.json` file has the correct devices configured. The simulator script will read the host and port config from `config/config.json` Next, run the following:
 
 ```
 $ yarn install
