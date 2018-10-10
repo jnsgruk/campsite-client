@@ -36,7 +36,7 @@ Optional arguments:
 
 This method will install Campsite Client into `/opt/campsite-client` and create a systemd unit called `campsite-client`.
 
-First, obtain a release zip file. This can be downloaded from the (Releases Page)[https://github.com/jnsgruk/campsite-client/releases] or built from the command line:
+First, obtain a release zip file. This can be downloaded from the [Releases Page](https://github.com/jnsgruk/campsite-client/releases) or built from the command line:
 
 ```
 $ git clone https://github.com/jnsgruk/campsite-client
