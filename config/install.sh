@@ -10,7 +10,7 @@ CAMPSITE_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 curl -sL https://deb.nodesource.com/setup_10.x | bash -
-apt install nodejs yarn
+apt install nodejs yarn gpsd
 
 cd $CAMPSITE_DIR 
 
@@ -57,4 +57,6 @@ rm -rf $CAMPSITE_DIR
 
 # Restart the campsite-client
 systemctl daemon-reload
+systemctl enable gpsd
+systemctl restart gpsd
 systemctl restart campsite-client
